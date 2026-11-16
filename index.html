@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>Frenesí de compras</title>
+<style>
+*{box-sizing:border-box;user-select:none;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;overflow:hidden;background:#000;color:#fff;font:15px system-ui,sans-serif;touch-action:none}
+canvas{position:fixed;inset:0;width:100%;height:100%}
+.ov{position:fixed;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;z-index:5}
+.ov.on{display:flex}
+#menu{background:linear-gradient(#0000,#000b)}
+h1{font-size:clamp(28px,7vw,54px);margin:0 0 12px;color:#ffb347;text-shadow:0 3px 0 #c2410c,0 0 20px #f97316;text-align:center}
+button{font:inherit;color:#fff;background:#f97316;border:0;border-radius:10px;padding:10px 18px;margin:4px;min-width:150px}
+button:active{filter:brightness(1.3)}
+.pn{background:#000c;padding:16px;border-radius:14px;max-width:92vw;max-height:92vh;overflow:auto;touch-action:pan-y}
+label{display:block;margin:8px 0}
+#hud{position:fixed;inset:0;pointer-events:none;z-index:2;display:none}
+#st{position:absolute;top:8px;left:10px;background:#0008;padding:6px 10px;border-radius:8px;white-space:pre}
+#hud button{pointer-events:auto}
+#pb{position:absolute;top:8px;right:10px;min-width:0}
+#act{position:absolute;right:24px;bottom:30px;display:none;padding:16px 22px}
+#bw{position:absolute;left:50%;bottom:90px;width:200px;margin-left:-100px;height:10px;background:#0008;border-radius:5px;display:none}
+#bar{height:100%;width:0;background:#4ade80;border-radius:5px}
+#toast{position:fixed;top:60px;left:50%;transform:translateX(-50%);background:#000c;padding:8px 14px;border-radius:10px;opacity:0;transition:opacity .3s;z-index:9;pointer-events:none;text-align:center;max-width:90vw}
+#jb{position:fixed;width:100px;height:100px;margin:-50px 0 0 -50px;border:2px solid #fff6;border-radius:50%;display:none;z-index:3;pointer-events:none}
+#jk{position:absolute;left:30px;top:30px;width:40px;height:40px;border-radius:50%;background:#fff6}
+#flash{position:fixed;inset:0;background:#fff;opacity:0;transition:opacity .8s;pointer-events:none;z-index:20}
+#flash.on{opacity:1}
+#day{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;font-size:12vw;font-weight:800;opacity:0;transition:opacity 1s;pointer-events:none;z-index:10;text-shadow:0 0 30px #000}
+#lap{background:#111c}
+#lw{width:min(96vw,720px);height:92vh;background:#fff;color:#222;border-radius:12px;display:flex;flex-direction:column;overflow:hidden}
+#lw .tb{display:flex;background:#fb7701;align-items:center}
+#lw .tb button{flex:1;min-width:0;border-radius:0;background:none;margin:0;padding:12px 4px}
+#lw .tb button.s{background:#0004}
+#lb{flex:1;overflow:auto;padding:8px;touch-action:pan-y}
+.cd{background:#f4f4f4;border-radius:8px;padding:8px;margin:6px 0}
+.cd button{padding:6px 12px;min-width:0;margin:4px 0 0}
+.pg{height:8px;background:#ddd;border-radius:4px;margin-top:4px}.pg i{display:block;height:100%;background:#fb7701;border-radius:4px}
+</style></head><body>
+<div id="hud"><div id="st"></div><button id="pb">⏸</button><div id="bw"><div id="bar"></div></div><button id="act"></button></div>
+<div id="jb"><div id="jk"></div></div>
+<div id="toast"></div><div id="day"></div><div id="flash"></div>
+<div id="menu" class="ov on"><h1>Frenesí de compras</h1>
+<button id="bn">Nueva partida</button><button id="bc">Continuar</button><button id="bs">Configuración</button></div>
+<div id="set" class="ov"><div class="pn"><h3>Configuración</h3>
+<label>Sensibilidad <input id="rs" type="range" min=".3" max="3" step=".1"></label>
+<label>Volumen <input id="rv" type="range" min="0" max="1" step=".05"></label>
+<p>📱 Stick izquierdo: moverte · arrastra a la derecha: mirar · botón 🖐: interactuar.<br>🖥 WASD, ratón (clic para capturar), E interactuar, Esc pausa.</p>
+<button id="bb">Volver</button></div></div>
+<div id="pause" class="ov"><div class="pn"><button id="pc">Continuar</button><br><button id="ps">Guardar</button><br><button id="pg">Configuración</button><br><button id="pm">Salir al menú</button></div></div>
+<div id="lap" class="ov"><div id="lw"><div class="tb">
+<button data-a="tab" data-v="0">🛒 Temu</button><button data-a="tab" data-v="1">⛏️ Minería</button><button data-a="tab" data-v="2">🎒 Almacén</button><button id="lx">✖</button></div>
+<div id="lb"></div></div></div>
+<script type="module" src="/src/main.js"></script>
+</body></html>
+  
