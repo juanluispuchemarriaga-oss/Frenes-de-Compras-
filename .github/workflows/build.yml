@@ -16,6 +16,7 @@ jobs:
           distribution: temurin
           java-version: 17
       - run: npm install
+      - run: cat src/p1.js src/p2.js src/p3.js src/p4.js > src/main.js
       - run: npm run build
       - run: npx cap add android
       - run: sed -i 's/<activity/<activity android:screenOrientation="sensorLandscape"/' android/app/src/main/AndroidManifest.xml
