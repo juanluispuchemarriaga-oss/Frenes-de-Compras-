@@ -36,8 +36,13 @@ label{display:block;margin:8px 0}
 .cd{background:#f4f4f4;border-radius:8px;padding:8px;margin:6px 0}
 .cd button{padding:6px 12px;min-width:0;margin:4px 0 0}
 .pg{height:8px;background:#ddd;border-radius:4px;margin-top:4px}.pg i{display:block;height:100%;background:#fb7701;border-radius:4px}
+#logo{position:fixed;inset:0;background:#000;z-index:30;display:flex;align-items:center;justify-content:center}
+#logo span{font:800 7vw system-ui;letter-spacing:.15em;text-align:center;background:linear-gradient(#ffe08a,#f97316);-webkit-background-clip:text;background-clip:text;color:transparent;opacity:0;animation:lt 3s forwards}
+@keyframes lt{0%{opacity:0;transform:scale(.9)}35%{opacity:1;transform:scale(1)}70%{opacity:1}100%{opacity:0;transform:scale(1.05)}}
+#dead{background:#200;text-align:center}#dead h1{color:#e11d48;text-shadow:0 0 25px #000;font-size:clamp(34px,10vw,72px)}
+#bj,#bk{position:absolute;bottom:105px;min-width:0;padding:14px 16px}#bj{right:20px}#bk{right:130px;opacity:.6}
 </style></head><body>
-<div id="hud"><div id="st"></div><button id="pb">⏸</button><div id="bw"><div id="bar"></div></div><button id="act"></button></div>
+<div id="hud"><div id="st"></div><button id="pb">⏸</button><div id="bw"><div id="bar"></div></div><button id="act"></button><button id="bj">⤒ Saltar</button><button id="bk">⬇ Agachar</button></div>
 <div id="jb"><div id="jk"></div></div>
 <div id="toast"></div><div id="day"></div><div id="flash"></div>
 <div id="menu" class="ov on"><h1>Frenesí de compras</h1>
@@ -47,10 +52,12 @@ label{display:block;margin:8px 0}
 <label>Volumen <input id="rv" type="range" min="0" max="1" step=".05"></label>
 <p>📱 Stick izquierdo: moverte · arrastra a la derecha: mirar · botón 🖐: interactuar.<br>🖥 WASD, ratón (clic para capturar), E interactuar, Esc pausa.</p>
 <button id="bb">Volver</button></div></div>
+<div id="dead" class="ov"><h1>HAS MUERTO</h1><p>Caíste del balcón y perdiste todo tu progreso.</p><button id="rb">Empezar de nuevo</button></div>
+<div id="logo"><span>JUAN LUIS GAMES</span></div>
 <div id="pause" class="ov"><div class="pn"><button id="pc">Continuar</button><br><button id="ps">Guardar</button><br><button id="pg">Configuración</button><br><button id="pm">Salir al menú</button></div></div>
 <div id="lap" class="ov"><div id="lw"><div class="tb">
 <button data-a="tab" data-v="0">🛒 Temu</button><button data-a="tab" data-v="1">⛏️ Minería</button><button data-a="tab" data-v="2">🎒 Almacén</button><button id="lx">✖</button></div>
 <div id="lb"></div></div></div>
 <script type="module" src="/src/main.js"></script>
 </body></html>
-  
+                                                                                                                                                                 
